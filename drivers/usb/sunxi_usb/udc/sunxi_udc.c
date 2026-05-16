@@ -3579,22 +3579,22 @@ static struct sunxi_udc sunxi_udc = {
 	},
 
 	.ep[2] = {
-		.num			= 2,
+		.num			= 1,
 		.ep = {
 			.name		= ep1out_bulk_name,
 			.ops		= &sunxi_udc_ep_ops,
 			.maxpacket	= SW_UDC_EP_FIFO_SIZE,
 			.maxpacket_limit = SW_UDC_EP_FIFO_SIZE,
-		.caps	= USB_EP_CAPS(USB_EP_CAPS_TYPE_ISO,
+		.caps	= USB_EP_CAPS(USB_EP_CAPS_TYPE_BULK,
 				USB_EP_CAPS_DIR_OUT),
 		},
 		.dev		        = &sunxi_udc,
-	.bEndpointAddress   = (USB_DIR_OUT | 2),
-	.bmAttributes	    = USB_ENDPOINT_XFER_ISOC,
+	.bEndpointAddress   = (USB_DIR_OUT | 1),
+	.bmAttributes	    = USB_ENDPOINT_XFER_BULK,
 	},
 
 	.ep[3] = {
-		.num			= 3,
+		.num			= 2,
 		.ep = {
 			.name		= ep2in_bulk_name,
 			.ops		= &sunxi_udc_ep_ops,
@@ -3604,12 +3604,12 @@ static struct sunxi_udc sunxi_udc = {
 					USB_EP_CAPS_DIR_IN),
 		},
 		.dev		        = &sunxi_udc,
-		.bEndpointAddress   = (USB_DIR_IN | 3),
+		.bEndpointAddress   = (USB_DIR_IN | 2),
 		.bmAttributes	    = USB_ENDPOINT_XFER_BULK,
 	},
 
 	.ep[4] = {
-		.num			= 4,
+		.num			= 2,
 		.ep = {
 			.name		= ep2out_bulk_name,
 			.ops		= &sunxi_udc_ep_ops,
@@ -3619,12 +3619,12 @@ static struct sunxi_udc sunxi_udc = {
 					USB_EP_CAPS_DIR_OUT),
 		},
 		.dev		        = &sunxi_udc,
-		.bEndpointAddress   = (USB_DIR_OUT | 4),
+		.bEndpointAddress   = (USB_DIR_OUT | 2),
 		.bmAttributes	    = USB_ENDPOINT_XFER_BULK,
 	},
 
 	.ep[5] = {
-		.num			= 5,
+		.num			= 3,
 		.ep = {
 			.name		= ep3_iso_name,
 			.ops		= &sunxi_udc_ep_ops,
@@ -3634,12 +3634,12 @@ static struct sunxi_udc sunxi_udc = {
 					USB_EP_CAPS_DIR_ALL),
 		},
 		.dev		        = &sunxi_udc,
-		.bEndpointAddress   = 5,
+		.bEndpointAddress   = 3,
 		.bmAttributes	    = USB_ENDPOINT_XFER_ISOC,
 	},
 
 	.ep[6] = {
-		.num			= 6,
+		.num			= 4,
 		.ep = {
 			.name		= ep4_int_name,
 			.ops		= &sunxi_udc_ep_ops,
@@ -3649,7 +3649,7 @@ static struct sunxi_udc sunxi_udc = {
 					USB_EP_CAPS_DIR_ALL),
 		},
 		.dev		        = &sunxi_udc,
-		.bEndpointAddress   = 6,
+		.bEndpointAddress   = 4,
 		.bmAttributes	    = USB_ENDPOINT_XFER_INT,
 	},
 
@@ -3662,7 +3662,7 @@ static struct sunxi_udc sunxi_udc = {
 	|| IS_ENABLED(CONFIG_ARCH_SUN300IW1) || IS_ENABLED(CONFIG_ARCH_SUN65IW1)\
 	|| IS_ENABLED(CONFIG_ARCH_SUN251IW1)
 	.ep[7] = {
-		.num			= 7,
+		.num			= 5,
 		.ep = {
 			.name		= ep5in_bulk_name,
 			.ops		= &sunxi_udc_ep_ops,
@@ -3672,12 +3672,12 @@ static struct sunxi_udc sunxi_udc = {
 					USB_EP_CAPS_DIR_IN),
 		},
 		.dev		        = &sunxi_udc,
-		.bEndpointAddress   = (USB_DIR_IN | 7),
+		.bEndpointAddress   = (USB_DIR_IN | 5),
 		.bmAttributes	    = USB_ENDPOINT_XFER_BULK,
 	},
 
 	.ep[8] = {
-		.num			= 8,
+		.num			= 5,
 		.ep = {
 			.name		= ep5out_bulk_name,
 			.ops		= &sunxi_udc_ep_ops,
@@ -3687,7 +3687,7 @@ static struct sunxi_udc sunxi_udc = {
 					USB_EP_CAPS_DIR_OUT),
 		},
 		.dev		        = &sunxi_udc,
-		.bEndpointAddress   = (USB_DIR_OUT | 8),
+		.bEndpointAddress   = (USB_DIR_OUT | 5),
 		.bmAttributes	    = USB_ENDPOINT_XFER_BULK,
 	},
 #endif
