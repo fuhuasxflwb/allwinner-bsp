@@ -3664,31 +3664,31 @@ static struct sunxi_udc sunxi_udc = {
 	.ep[7] = {
 		.num			= 5,
 		.ep = {
-			.name		= ep5in_bulk_name,
+			.name		= ep5in_iso_name,
 			.ops		= &sunxi_udc_ep_ops,
-			.maxpacket	= SW_UDC_EP_FIFO_SIZE,
-			.maxpacket_limit = SW_UDC_EP_FIFO_SIZE,
-			.caps	= USB_EP_CAPS(USB_EP_CAPS_TYPE_BULK,
+			.maxpacket	= SW_UDC_EP_ISO_FIFO_SIZE,
+			.maxpacket_limit = SW_UDC_EP_ISO_FIFO_SIZE,
+			.caps	= USB_EP_CAPS(USB_EP_CAPS_TYPE_ISO,
 					USB_EP_CAPS_DIR_IN),
 		},
 		.dev		        = &sunxi_udc,
 		.bEndpointAddress   = (USB_DIR_IN | 5),
-		.bmAttributes	    = USB_ENDPOINT_XFER_BULK,
+		.bmAttributes	    = USB_ENDPOINT_XFER_ISOC,
 	},
 
 	.ep[8] = {
 		.num			= 5,
 		.ep = {
-			.name		= ep5out_bulk_name,
+			.name		= ep5out_iso_name,
 			.ops		= &sunxi_udc_ep_ops,
-			.maxpacket	= SW_UDC_EP_FIFO_SIZE,
-			.maxpacket_limit = SW_UDC_EP_FIFO_SIZE,
-			.caps	= USB_EP_CAPS(USB_EP_CAPS_TYPE_BULK,
+			.maxpacket	= SW_UDC_EP_ISO_FIFO_SIZE,
+			.maxpacket_limit = SW_UDC_EP_ISO_FIFO_SIZE,
+			.caps	= USB_EP_CAPS(USB_EP_CAPS_TYPE_ISO,
 					USB_EP_CAPS_DIR_OUT),
 		},
 		.dev		        = &sunxi_udc,
 		.bEndpointAddress   = (USB_DIR_OUT | 5),
-		.bmAttributes	    = USB_ENDPOINT_XFER_BULK,
+		.bmAttributes	    = USB_ENDPOINT_XFER_ISOC,
 	},
 #endif
 
