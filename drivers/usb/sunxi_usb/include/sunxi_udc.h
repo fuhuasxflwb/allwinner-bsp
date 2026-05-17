@@ -150,8 +150,8 @@ static const struct sw_udc_fifo ep_fifo[] = {
 	{ep2out_bulk_name, 3584, 1024, 1},
 	{ep3_iso_name,     4608, 1024, 0},
 	{ep4_int_name,     5632, 512,  0},
-	{ep5in_bulk_name,  6144, 1024, 1},
-	{ep5out_bulk_name, 7168, 1024, 1},
+	{ep5in_bulk_name,  6144, 1024, 0},
+	{ep5out_bulk_name, 7168, 1024, 0},
 };
 
 #else
